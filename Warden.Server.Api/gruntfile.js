@@ -7,8 +7,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-karma');
+
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.initConfig({
+        // read in the project settings from the package.json file into the pkg property
+        pkg: grunt.file.readJSON('package.json'),
         //jshint: {
         //    all: ['client/app/app.module.js']
         //},
@@ -24,7 +28,13 @@ module.exports = function (grunt) {
             scripts: {
                 files: ['client/app/**/*.js'],
                 tasks: ['uglify']
+            },
+            // changing an application file triggers automated tests
+            tests: {
+                files: ['<%= paths.app %>/client/app/**/*.js'],
+                tasks: ['karma:unit']
             }
+            
         },
         copy: {
             packages: {
@@ -64,7 +74,18 @@ module.exports = function (grunt) {
                     { cwd: 'client/images/', src: "**/**", dest: "wwwroot/images/", expand: true },
                 ]
             },
-        }
+        },
+        
+        karma: {
+            unit: {
+                configFile: 'client/tests/karma.conf.js',
+                browsers: ['PhantomJS']
+            },
+            allBrowsers: {
+                configFile: 'client/test/karma.conf.js',
+                browsers: ['Chrome']
+            },
+        },
     });
 
     grunt.registerTask('default', ['uglify', 'watch', 'copy']);

@@ -101,6 +101,7 @@
     <Content Include="client\app\app.module.js" />
     <Content Include="client\app\authentication\authenication.controller.js" />
     <Content Include="client\app\authentication\authentication.service.js" />
+    <Content Include="client\app\dashboard\site.service.js" />
     <Content Include="client\app\home\footer.html" />
     <Content Include="client\app\home\home.controller.js" />
     <Content Include="client\app\home\home.html" />
@@ -142,7 +143,8 @@
     <Content Include="client\app\shared\navbar.directive.js" />
     <Content Include="client\app\users\userrole.constants.js" />
     <Content Include="client\index.html" />
-    <Content Include="client\readme.txt" />
+    <Content Include="client\tests\karma.conf.js" />
+    <Content Include="client\tests\unit\test.js" />
     <Content Include="Global.asax" />
     <Content Include="gruntfile.js" />
     <Content Include="Web.config" />
@@ -215,6 +217,9 @@
     <Folder Include="client\app\login\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
