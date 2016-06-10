@@ -2,20 +2,14 @@
   "name": "ASP.NET",
   "private": true,
   "dependencies": {
-    "jquery": "2.1.4",
+    "jquery": "^2.2.4",
     "bootstrap": "3.3.5",
     "angular": "1.5.5",
     "angular-route": "1.5.5",
     "angular-resource": "1.5.5",
-    "angular-ui-grid": "3.1.1",
-    "ngDialog": "~0.5.6",
     "angular-local-storage": "0.2.7",
     "toastr": "2.1.2",
-    "ngmap": "1.16.7",
     "angular-mocks": "1.5.5",
-    "angular-google-places-autocomplete": "0.2.7"
-  },
-  "resolutions": {
-    "angular": "^1.5.5"
+    "fontawesome": "4.6.3"
   }
 }

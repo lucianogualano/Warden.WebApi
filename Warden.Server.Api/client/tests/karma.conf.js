@@ -26,7 +26,6 @@ module.exports = function (config) {
             '../bower_components/angular-ui-grid/ui-grid.js',
             '../bower_components/jquery/dist/jquery.js',
             '../bower_components/bootstrap/dist/js/bootstrap.js',            
-            '../bower_components/ngDialog/js/ngDialog.js',
             '../bower_components/ngmap/build/scripts/ng-map.js',
             '../bower_components/toastr/toastr.js',
             'app/app.module.js',

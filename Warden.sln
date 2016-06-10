@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warden.Server.Api", "Warden
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warden.Server.Api.Tests", "Warden.Server.Api.Tests\Warden.Server.Api.Tests.csproj", "{AE0F4118-6B7B-44AD-85D8-98AC2D408FEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D1566014-4CE1-4A9E-8301-94C60243DAC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{614A0C83-44D0-4C50-8704-82C3992323EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F66F56FE-B5D9-4722-B4FE-BF7AD3F9655F} = {D1566014-4CE1-4A9E-8301-94C60243DAC0}
+		{AE0F4118-6B7B-44AD-85D8-98AC2D408FEA} = {614A0C83-44D0-4C50-8704-82C3992323EF}
 	EndGlobalSection
 EndGlobal

@@ -18,7 +18,7 @@
                         <div id="collapsable-nav" class="collapse navbar-collapse">
                             <ul id="nav-list" class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="/"><i class="fa fa-home"></i><b>Home</b></a></li>
-                                <li class="divider"><a ng-click="authCtrl.loginUser()" ng-show="!authCtrl.isUserLoggedIn()"><i class="fa fa-comment"></i><b>Login</b></a></li>
+                                <li class="divider"><a href="/login" ng-show="!authCtrl.isUserLoggedIn()"><i class="fa fa-user"></i><b>Login</b></a></li>
                                 <li class="divider"><a ng-click="authCtrl.logout()" ng-show="authCtrl.isUserLoggedIn()"><i class="fa fa-comment"></i><b>Logout</b></a></li>
                             </ul><!-- #nav-list -->
                         </div> <!--.nav collapse-->

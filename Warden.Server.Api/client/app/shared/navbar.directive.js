@@ -15,7 +15,7 @@
         var directive = {
             link: link,
             restrict: 'A',
-            templateUrl: 'pages/navbar.html',
+            templateUrl: 'spa/shared/navbar.html',
             controller: 'AuthenticaitonCtrl', //Embed a custom controller in the directive,
             controllerAs: 'authCtrl',
             scope: true

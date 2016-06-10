@@ -5,9 +5,9 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$location', 'ngDialog', '$log', 'authService'];
+    HomeController.$inject = ['$location', '$log', 'authService'];
 
-    function HomeController($location, ngDialog, $log, authService) {
+    function HomeController($location, $log, authService) {
         /* jshint validthis:true */
         var vm = this;
 
@@ -39,9 +39,6 @@
                 }
 
                 $location.path('/dashboard');
-
-                // Close the popup login dialog
-                ngDialog.closeAll();
             });
         }
 

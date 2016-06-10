@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,24 +44,71 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.FullNetFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,8 +118,16 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -83,38 +139,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="client\app.module.concat.js" />
     <Content Include="client\app\app.module.js" />
     <Content Include="client\app\authentication\authenication.controller.js" />
     <Content Include="client\app\authentication\authentication.service.js" />
+    <Content Include="client\app\authentication\login.html" />
+    <Content Include="client\app\authentication\register.html" />
+    <Content Include="client\app\dashboard\dashboard.controller.js" />
+    <Content Include="client\app\dashboard\dashboard.html" />
+    <Content Include="client\app\dashboard\dashboard.site.controller.js" />
+    <Content Include="client\app\dashboard\site.controller.js" />
     <Content Include="client\app\dashboard\site.service.js" />
     <Content Include="client\app\home\footer.html" />
     <Content Include="client\app\home\home.controller.js" />
     <Content Include="client\app\home\home.html" />
-    <Content Include="client\css\autocomplete.css" />
-    <Content Include="client\css\bootstrap.min.css" />
-    <Content Include="client\css\footer-distributed-with-address-and-phones.css" />
-    <Content Include="client\css\ngDialog-theme-default.min.css" />
-    <Content Include="client\css\ngDialog.min.css" />
     <Content Include="client\css\site.css" />
-    <Content Include="client\css\social-buttons.css" />
-    <Content Include="client\css\styles.css" />
-    <Content Include="client\css\toastr.min.css" />
-    <Content Include="client\css\ui-grid.css" />
     <Content Include="client\images\child-1111818__340.jpg" />
     <Content Include="client\images\escape-route-1040527__180.jpg" />
     <Content Include="client\images\evac.jpg" />
@@ -147,56 +185,30 @@
     <Content Include="client\tests\unit\test.js" />
     <Content Include="Global.asax" />
     <Content Include="gruntfile.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
-    <Content Include="wwwroot\css\autocomplete.css" />
-    <Content Include="wwwroot\css\bootstrap.min.css" />
-    <Content Include="wwwroot\css\ngDialog.min.css" />
-    <Content Include="wwwroot\css\toastr.min.css" />
-    <Content Include="wwwroot\css\ui-grid.css" />
-    <Content Include="wwwroot\images\child-1111818__340.jpg" />
-    <Content Include="wwwroot\images\escape-route-1040527__180.jpg" />
-    <Content Include="wwwroot\images\evac.jpg" />
-    <Content Include="wwwroot\images\familysafe.jpg" />
-    <Content Include="wwwroot\images\forest-868715__340.jpg" />
-    <Content Include="wwwroot\images\helicopterEmerg.jpg" />
-    <Content Include="wwwroot\images\high-resolution-wallpapers-25.jpg" />
-    <Content Include="wwwroot\images\logowarden.png" />
-    <Content Include="wwwroot\images\logowarden_large.png" />
-    <Content Include="wwwroot\images\logowarden_medium.png" />
-    <Content Include="wwwroot\images\logowarden_small.png" />
-    <Content Include="wwwroot\images\restaurant-logo.png" />
-    <Content Include="wwwroot\images\restaurant-logo_large.png" />
-    <Content Include="wwwroot\images\restaurant-logo_medium.png" />
-    <Content Include="wwwroot\images\restaurant-logo_small.png" />
-    <Content Include="wwwroot\images\skyscraper-825546__340.jpg" />
-    <Content Include="wwwroot\images\superboy-extrasmall.jpg" />
-    <Content Include="wwwroot\images\superboy-small.jpg" />
-    <Content Include="wwwroot\images\superboy-small2.jpg" />
-    <Content Include="wwwroot\images\superboy-xs-scaled.jpg" />
-    <Content Include="wwwroot\images\superboy.jpg" />
-    <Content Include="wwwroot\images\vatican-1136071__340.jpg" />
-    <Content Include="wwwroot\images\warden_logo_ref_by_mzy9-d8i0qe7.jpg" />
+    <Content Include="wwwroot\app.min.js" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\js\angular-local-storage.min.js" />
-    <Content Include="wwwroot\js\angular-resource.min.js" />
-    <Content Include="wwwroot\js\angular-route.min.js" />
-    <Content Include="wwwroot\js\angular.min.js" />
-    <Content Include="wwwroot\js\autocomplete.js" />
-    <Content Include="wwwroot\js\bootstrap.min.js" />
-    <Content Include="wwwroot\js\jquery.min.js" />
-    <Content Include="wwwroot\js\ng-map.js" />
-    <Content Include="wwwroot\js\ngDialog.min.js" />
-    <Content Include="wwwroot\js\toastr.min.js" />
-    <Content Include="wwwroot\js\ui-grid.min.js" />
-    <Content Include="wwwroot\pages\footer.html" />
-    <Content Include="wwwroot\pages\home.html" />
-    <Content Include="wwwroot\pages\navbar.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="DTO\ApplicationUser.cs" />
+    <Compile Include="DTO\CompanyViewModel.cs" />
+    <Compile Include="DTO\SiteViewModel.cs" />
+    <Compile Include="DTO\UserRegistrationViewModel.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\IEntityBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\EF\WardenContext.cs" />
+    <Compile Include="Infrastructure\EF\WardenDbInitializer.cs" />
+    <Compile Include="Infrastructure\Services\Abstract\ISiteService.cs" />
+    <Compile Include="Infrastructure\Services\ApplicationOAuthProvider.cs" />
+    <Compile Include="Infrastructure\Services\SiteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -214,8 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="client\app\login\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
