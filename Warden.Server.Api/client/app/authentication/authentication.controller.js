@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .controller('AuthenticaitonCtrl', AuthenticaitonCtrl);
+        .controller('AuthenticationCtrl', AuthenticationCtrl);
 
 
-    AuthenticaitonCtrl.$inject = ['$location', '$log', '$scope', 'authService', 'notificationService'];
+    AuthenticationCtrl.$inject = ['$location', '$log', '$scope', 'authService', 'notificationService'];
 
-    function AuthenticaitonCtrl($location, $log, $scope, authService, notificationService) {
+    function AuthenticationCtrl($location, $log, $scope, authService, notificationService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'registerController';

@@ -9,11 +9,14 @@ namespace Warden.Server.Api.Entities
     {
         public Company()
         {
-
+            Sites = new HashSet<Site>();
         }
 
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
+        public virtual ICollection<Site> Sites { get; set; }
         //public virtual
     }
 }

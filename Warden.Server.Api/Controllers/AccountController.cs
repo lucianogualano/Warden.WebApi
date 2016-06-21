@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Http;
 using Warden.Server.Api.DTO;
 using Warden.Server.Api.Entities;
+using Warden.Server.Api.Infrastructure.EF;
 using Warden.Services.Services;
 
 namespace Warden.Server.Api.Controllers
@@ -20,8 +21,8 @@ namespace Warden.Server.Api.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
-        private ApplicationUserManager userManager;
-
+        private ApplicationUserManager userManager = null;
+        private ApplicationRoleManager roleManager = null;
         public AccountController()
         {
         }
@@ -47,6 +48,21 @@ namespace Warden.Server.Api.Controllers
             private set
             {
                 this.userManager = value;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return this.roleManager ?? Request.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            }
+            private set
+            {
+                this.roleManager = value;
             }
         }
 

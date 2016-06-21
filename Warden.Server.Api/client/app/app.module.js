@@ -12,6 +12,10 @@
      * Application run entry point, listen for main events
      */
     function run($rootScope, $location, authService) {
+
+        if (authService.isUserAuthenticated() === true) {
+            $location.path('/dashboard');
+        }
         //$rootScope.$on("$routeChangeStart", function (evt, to, from) {
         //    if (to.authorize === true) {
         //        if (!authService.authentication.isAuthenticated) {
@@ -41,11 +45,11 @@
             templateUrl: "/spa/home/home.html"
         }).when("/register", {
             templateUrl: "/spa/authentication/register.html",
-            controller: "AuthenticaitonCtrl",
+            controller: "AuthenticationCtrl",
             controllerAs: "authCtrl"
         }).when("/login", {
             templateUrl: "/spa/authentication/login.html",
-            controller: "AuthenticaitonCtrl",
+            controller: "AuthenticationCtrl",
             controllerAs: "authCtrl"
         }).when("/dashboard", {
             templateUrl: "/spa/dashboard/dashboard.html",

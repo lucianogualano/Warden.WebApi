@@ -13,7 +13,7 @@
         var serviceBase = '/api/account/';
 
         var authService = {
-            isUserAuthenticated,
+            isUserAuthenticated: isUserAuthenticated,
             register: register,
             registrationFailed: registrationFailed,
             login: login,

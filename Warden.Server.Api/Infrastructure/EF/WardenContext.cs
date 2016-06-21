@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Warden.Server.Api.DTO;
 using System.Data.Entity.Core;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Warden.Server.Api.Infrastructure.EF
 {
@@ -26,6 +27,11 @@ namespace Warden.Server.Api.Infrastructure.EF
            // Database.SetInitializer(new WardenDbInitializer());
         }
 
+        public DbSet<Company> Companys { get; set; }
+        public DbSet<Site> Sites { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeDetails> EmployeeDetails { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -33,6 +39,9 @@ namespace Warden.Server.Api.Infrastructure.EF
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Conventions.Remove<PluralizingTableNameConvention>();
+
             //builder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
             //builder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             //builder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });

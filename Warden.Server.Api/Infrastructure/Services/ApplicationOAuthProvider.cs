@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Warden.Server.Api.DTO;
+using Warden.Server.Api.Infrastructure.EF;
 
 namespace Warden.Server.Api.Infrastructure.Services
 {

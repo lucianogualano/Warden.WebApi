@@ -20,7 +20,7 @@
         vm.password = null;
         vm.errorMessage = null;
         vm.title = 'Home';
-
+    
         /**
          *   @description Authenticate user credentials to log into application
          *   @private
@@ -55,6 +55,6 @@
          */
         function signup($location, authService, $log) {
             loginWithService(vm.username, vm.email, vm.password);
-        }
+        }        
     }
 })();

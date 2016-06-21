@@ -8,8 +8,11 @@ using Warden.Server.Api.Infrastructure.EF;
 
 namespace Warden.Server.Api
 {
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
+    /// <summary>
+    /// Configure the application user manager used in this application. 
+    /// UserManager is defined in ASP.NET Identity and is used by the application.
+    /// </summary>
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
@@ -41,6 +44,24 @@ namespace Warden.Server.Api
                 manager.UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ApplicationRoleManager : RoleManager<IdentityRole>
+    {
+        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+            : base(roleStore)
+        {
+        }
+
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+        {
+            var appRoleManager = new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<WardenContext>()));
+
+            return appRoleManager;
         }
     }
 }

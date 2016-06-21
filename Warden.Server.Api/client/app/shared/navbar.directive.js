@@ -16,7 +16,7 @@
             link: link,
             restrict: 'A',
             templateUrl: 'spa/shared/navbar.html',
-            controller: 'AuthenticaitonCtrl', //Embed a custom controller in the directive,
+            controller: 'AuthenticationCtrl', //Embed a custom controller in the directive,
             controllerAs: 'authCtrl',
             scope: true
         };
