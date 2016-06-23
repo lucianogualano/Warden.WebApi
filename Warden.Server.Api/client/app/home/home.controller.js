@@ -27,7 +27,7 @@
          */
         function loginWithService(username, email, password) {
             // Set default GUID for ID to empty
-            var id = "00000000-0000-0000-0000-000000000000";
+            var id = 0;
 
             authService.login(id, username, email, password).then(function (status) {
                 $log.debug("Signed up user " + vm.username + " status is " + status.status);

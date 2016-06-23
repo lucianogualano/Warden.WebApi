@@ -144,9 +144,11 @@
     <Content Include="client\app\authentication\authentication.service.js" />
     <Content Include="client\app\authentication\login.html" />
     <Content Include="client\app\authentication\register.html" />
+    <Content Include="client\app\dashboard\dashboard.companyedit.controller.js" />
     <Content Include="client\app\dashboard\dashboard.controller.js" />
     <Content Include="client\app\dashboard\dashboard.html" />
     <Content Include="client\app\dashboard\dashboard.site.controller.js" />
+    <Content Include="client\app\dashboard\editCompany.html" />
     <Content Include="client\app\dashboard\site.controller.js" />
     <Content Include="client\app\dashboard\site.service.js" />
     <Content Include="client\app\home\footer.html" />

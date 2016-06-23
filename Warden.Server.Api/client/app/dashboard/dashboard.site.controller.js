@@ -6,9 +6,9 @@
         .controller('DashboardSiteController', DashboardSiteController);
 
     // TODO: pass in notification service to report errors
-    DashboardSiteController.$inject = ['siteService', '$log'];
+    DashboardSiteController.$inject = ['SiteService', '$log', '$location'];
 
-    function DashboardSiteController($location) {
+    function DashboardSiteController(SiteService, $log, $location) {
         /* jshint validthis:true */
         var vm = this;
 
@@ -17,10 +17,11 @@
         vm.create = create;
         vm.add = add;
         vm.remove = remove;
+        vm.activeSite = {};
 
         // Default new site ID is empty, the server generates ID
         vm.newSite = {
-            Id: "00000000-0000-0000-0000-000000000000"
+            Id: 0
         };
 
         vm.sites = [];
@@ -37,7 +38,7 @@
             $log.message = "get all sites";
 
             // Use the site service to get all the sites
-            siteService.getSites()
+            SiteService.getSites()
             .then(function (results) {
                 vm.sites = results.data;
             }, function (error) {
@@ -50,12 +51,15 @@
         * @desc Create a new site if it is valid
         * @memberOf Controller
         */
-        function create(site) {
+        function create() {
+            $location.path('/companyedit/0');
             // Add the new site
-            vm.add(vm.newSite);
+            //var createdSite = vm.add(vm.newSite);
 
+            // Set the active site
+            //vm.activeSite = 
             // Reset the new site for the next creation
-            vm.newSite = {};
+            //vm.newSite = {};
         }
 
         /**
@@ -70,10 +74,12 @@
 
             // Insert the new side on the server side.
             // Check if validation error occurs?
-            siteService.insertSite(site);
+            SiteService.insertSite(site);
 
             // Add the new site to the client side collection
-            vm.sites.push(site);
+            //vm.sites.push(site);
+
+            //return site;
         }
 
         /**
@@ -83,7 +89,7 @@
          */
         function remove(id) {
             // Delete the site from the server persistence
-            siteService.deleteSite(id)
+            SiteService.deleteSite(id)
             .then(function (results) {
                 // Update the client side by deleting the binded grid data model collection
                 var findSite = vm.sites.filter(function (s) {

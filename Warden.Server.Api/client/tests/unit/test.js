@@ -23,7 +23,7 @@ describe('Site CRUD service', function () {
         siteService = _SiteService_;
         httpBackend = _$httpBackend_;
         newSite = {
-            Id: "00000000-0000-0000-0000-000000000000",
+            Id: 0,
             Name: 'george.smith@yahoo.com',
             Address: '101 Collin St Melbourne 3000 VIC, Australia'
         };

@@ -53,9 +53,14 @@
             controllerAs: "authCtrl"
         }).when("/dashboard", {
             templateUrl: "/spa/dashboard/dashboard.html",
-            controller: "DashboardController",
-            controllerAs: "dashboardController",
+            controller: "DashboardSiteController",
+            controllerAs: "vm",
             authorize: true
+        }).when('/companyedit/:companyId', {
+            controller: 'DashboardCompanyEditController',
+            templateUrl: '/spa/dashboard/editCompany.html',
+            controllerAs: 'vm',
+            secure: true //This route requires an authenticated user
         }).otherwise({
             redirectTo: "/"
         });

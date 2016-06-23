@@ -17,7 +17,7 @@
         vm.newSite = {};
 
         // Default new site ID is empty, the server generates ID
-        vm.newSite.Id = "00000000-0000-0000-0000-000000000000";
+        vm.newSite.Id = 0;
 
         $scope.sites = {};
 

@@ -1,0 +1,107 @@
+﻿<div class="view">
+    <div class="container">
+        <header>
+            <h3><span class="glyphicon glyphicon-edit"></span> {{vm.title}} Company</h3>
+        </header>
+        <form name="editForm" novalidate>
+            <div>                
+                <div class="row">
+                    <div class="col-md-2">
+                        Company Name:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="name" class="form-control" data-ng-model="vm.company.name" required />
+                        <span class="errorMessage" ng-show="editForm.name.$touched && editForm.name.$invalid">
+                            Name is required
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        Country:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="country" class="form-control" data-ng-model="vm.company.country" required />
+                        <span class="errorMessage" ng-show="editForm.country.$touched && editForm.country.$invalid">
+                            Country is required
+                        </span>
+                    </div>
+                </div>
+                <br />                             
+                <div class="row">
+                    <div class="col-md-2">
+                        Address:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="address" class="form-control" data-ng-model="vm.company.address" required />
+                        <span class="errorMessage" ng-show="editForm.address.$touched && editForm.address.$invalid">
+                            Address is required
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        City:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="city" class="form-control" data-ng-model="vm.company.city" required />
+                        <span class="errorMessage" ng-show="editForm.city.$touched && editForm.city.$invalid">
+                            City is required
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        State:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="state" class="form-control" data-ng-model="vm.company.state" required />
+                        <span class="errorMessage" ng-show="editForm.state.$touched && editForm.state.$invalid">
+                            State is required
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        Zip:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="number" name="postcode" class="form-control" data-ng-model="vm.comapny.postcode" required />
+                        <span class="errorMessage" ng-show="editForm.postcode.$touched && editForm.postcode.$invalid">
+                            Postcode is required
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary" data-ng-click="vm.saveCustomer()"
+                                ng-disabled="editForm.$invalid || !editForm.$dirty">
+                            {{vm.buttonText}}
+                        </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-danger" data-ng-if="vm.company.id > 0" data-ng-click="vm.deleteCustomer()">Delete</button>
+                    </div>
+                </div>
+                <br />
+                <div class="statusRow">
+                    <br />
+                    <div class="label label-success" data-ng-show="vm.updateStatus">
+                        <span class="glyphicon glyphicon-thumbs-up icon-white"></span>&nbsp;&nbsp;Comapny updated!
+                    </div>
+                </div>
+                <div class="statusRow">
+                    <br />
+                    <div class="label label-important" data-ng-show="vm.errorMessage">
+                        <span class="glyphicon glyphicon-thumbs-down icon-white"></span>&nbsp;&nbsp;Error: {{ vm.errorMessage }}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
