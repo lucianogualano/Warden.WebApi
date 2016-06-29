@@ -38,10 +38,10 @@
         //Get all the companys
         function getCompanyById(id) {
 
-            var headers = createHeader();
+           // var headers = createHeader();
 
             $log.debug("Trying to get company id " + id);
-            var result = $http.get(urlBase + id, { headers });
+            var result = $http.get(urlBase + id);
 
             return result; //deferrer
         };

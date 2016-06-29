@@ -29,5 +29,13 @@ namespace Warden.Server.Api.Entities
         /// </summary>
         public virtual ICollection<Employee> Employee { get; set; }
         //public virtual ICollection<Person> Visitors { get; set; }
+
+        public string Address { get; set; }
+
+        public string City { get; set; }
+
+        public string Country { get; set; }
+
+        public int PostCode { get; set; }
     }
 }

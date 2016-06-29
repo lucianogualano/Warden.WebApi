@@ -15,12 +15,6 @@
         // Functions
         vm.saveCompany = saveCompany;
         vm.deleteCompany = deleteCompany;
-        vm.CompanyService = CompanyService;
-
-        // Default new site ID is empty, the server generates ID
-        vm.newSite = {
-            Id: 0
-        };
 
         vm.companyId = ($routeParams.companyId) ? parseInt($routeParams.companyId) : 0,
         vm.title = (vm.companyId > 0) ? 'Edit' : 'Add';
@@ -30,6 +24,7 @@
         vm.company = {};
         vm.title = 'Dashboard';
         vm.errorMessage = "";
+        vm.CompanyService = CompanyService;
 
         /**
          * @namespace DashboardCompanyEditController
@@ -69,8 +64,21 @@
     */
         function saveCompany(isValid) {
             if (isValid) {
-                if (!this.company.id) {
-                    this.CompanyService.insert(this.company).then(function (result) {
+                if (!vm.companyId) {
+                    var newCompany = {
+                        Id: vm.companyId,
+                        Name: vm.company.name,
+                        Sites: [
+                            {
+                                Address: vm.company.address,
+                                City: vm.company.city,
+                                State: vm.company.state,
+                                Country: vm.company.country,
+                                Postcode : vm.company.postcode
+                            }
+                        ]
+                    }
+                    vm.CompanyService.insert(newCompany).then(function (result) {
                         if (result.status != 200) {
                             //notificationService.displayError("Authenication failed.");
                             return;
@@ -82,7 +90,7 @@
                 }
             }
             else {
-                this.CompanyService.update(this.company).then(processSuccess, processError);
+                //this.CompanyService.update(this.company).then(processSuccess, processError);
             }
         }
 
