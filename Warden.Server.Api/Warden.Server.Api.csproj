@@ -142,8 +142,10 @@
     <Content Include="client\app\app.module.js" />
     <Content Include="client\app\authentication\authentication.controller.js" />
     <Content Include="client\app\authentication\authentication.service.js" />
+    <Content Include="client\app\authentication\http.interceptor.js" />
     <Content Include="client\app\authentication\login.html" />
     <Content Include="client\app\authentication\register.html" />
+    <Content Include="client\app\dashboard\company.service.js" />
     <Content Include="client\app\dashboard\dashboard.companyedit.controller.js" />
     <Content Include="client\app\dashboard\dashboard.controller.js" />
     <Content Include="client\app\dashboard\dashboard.html" />
@@ -197,6 +199,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\SitesController.cs" />
     <Compile Include="Infrastructure\EF\ApplicationUser.cs" />
     <Compile Include="DTO\CompanyViewModel.cs" />
     <Compile Include="DTO\SiteViewModel.cs" />
@@ -216,6 +220,7 @@
     </Compile>
     <Compile Include="Infrastructure\EF\WardenContext.cs" />
     <Compile Include="Infrastructure\EF\WardenDbInitializer.cs" />
+    <Compile Include="Infrastructure\Repository\CompanyRepository.cs" />
     <Compile Include="Infrastructure\Services\Abstract\ISiteService.cs" />
     <Compile Include="Infrastructure\Services\ApplicationOAuthProvider.cs" />
     <Compile Include="Infrastructure\Services\SiteService.cs" />

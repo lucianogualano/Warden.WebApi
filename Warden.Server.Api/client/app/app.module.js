@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    config.$inject = ['$routeProvider', '$locationProvider', '$logProvider'];
+    config.$inject = ['$routeProvider', '$locationProvider', '$logProvider','$httpProvider'];
     run.$inject = ['$rootScope', '$location','authService'];
 
     var app = angular.module('app', ['ngRoute', 'ngResource', 'LocalStorageModule']);
@@ -40,7 +40,7 @@
     /**
      * Application configuration entry point to configure routing.
      */
-    function config($routeProvider, $locationProvider, $logProvider) {
+    function config($routeProvider, $locationProvider, $logProvider, $httpProvider) {
         $routeProvider.when("/", {
             templateUrl: "/spa/home/home.html"
         }).when("/register", {
@@ -56,9 +56,9 @@
             controller: "DashboardSiteController",
             controllerAs: "vm",
             authorize: true
-        }).when('/companyedit/:companyId', {
-            controller: 'DashboardCompanyEditController',
+        }).when('/companyedit/:companyId', {            
             templateUrl: '/spa/dashboard/editCompany.html',
+            controller: 'DashboardCompanyEditController',
             controllerAs: 'vm',
             secure: true //This route requires an authenticated user
         }).otherwise({
@@ -67,6 +67,8 @@
 
         $locationProvider.html5Mode(true);
 
-        $logProvider.debugEnabled(true);      
+        $logProvider.debugEnabled(true);
+
+        $httpProvider.interceptors.push('httpRequestInterceptor');
     }
 })();

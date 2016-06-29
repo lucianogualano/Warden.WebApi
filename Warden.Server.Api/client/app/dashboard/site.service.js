@@ -13,6 +13,7 @@
 
         var urlBase = '/api/sites/';
         var service = {
+          getSite: getSite,
           getSites: getSites,
           insertSite: insertSite,
           updateSite : updateSite,
@@ -20,6 +21,13 @@
         };
       
         return service;
+
+
+        //Get all the sites
+        function getSite(id) {
+            var result = $http.get(urlBase + id);
+            return result; //deferrer
+        };
 
          //Get all the sites
         function getSites() {

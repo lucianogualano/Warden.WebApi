@@ -1,7 +1,7 @@
 ﻿<div class="view">
     <div class="container">
         <header>
-            <h3><span class="glyphicon glyphicon-edit"></span> {{vm.title}} Company</h3>
+            <h3><i class="fa fa-pencil-square-o pull-right"></i><!--<span class="fa fa-pencil-square-o" glyphicon glyphicon-edit"></span>-->{{vm.title}} Company</h3>
         </header>
         <form name="editForm" novalidate>
             <div>                
@@ -79,12 +79,12 @@
                 <br />
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary" data-ng-click="vm.saveCustomer()"
+                        <button type="submit" class="btn btn-primary" data-ng-click="vm.saveCompany(editForm.$valid)"
                                 ng-disabled="editForm.$invalid || !editForm.$dirty">
                             {{vm.buttonText}}
                         </button>
                         &nbsp;&nbsp;
-                        <button class="btn btn-danger" data-ng-if="vm.company.id > 0" data-ng-click="vm.deleteCustomer()">Delete</button>
+                        <button class="btn btn-danger" data-ng-if="vm.company.id > 0" data-ng-click="vm.deleteCompany()">Delete</button>
                     </div>
                 </div>
                 <br />

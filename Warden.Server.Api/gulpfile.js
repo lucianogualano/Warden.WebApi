@@ -80,6 +80,11 @@ gulp.task('setup-vendors', function () {
       paths.bower + 'fontawesome/fonts/fontawesome-webfont.ttf',
       paths.bower + 'fontawesome/fonts/fontawesome-webfont.woff',
       paths.bower + 'fontawesome/fonts/fontawesome-webfont.woff2',
+      paths.bower + 'bootstrap/fonts/glyphicons-halflings-regular.eot',
+      paths.bower + 'bootstrap/fonts/glyphicons-halflings-regular.svg',
+      paths.bower + 'bootstrap/fonts/glyphicons-halflings-regular.ttf',
+      paths.bower + 'bootstrap/fonts/glyphicons-halflings-regular.woff',
+      paths.bower + 'bootstrap/fonts/glyphicons-halflings-regular.woff2',
     ]).pipe(gulp.dest(paths.fontsVendors));
 });
 
